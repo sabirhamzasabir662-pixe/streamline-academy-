@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Line Academy | Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Left Side -->
+    <div class="left">
+        <div class="overlay">
+            <h1>STREAM LINE </h1>
+            <h2>ACADEMY</h2>
+            <p>Learn • Grow • Succeed</p>
+        </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="right">
+
+        <div class="login-box">
+
+            <h1>Welcome</h1>
+
+            <p>Login to your Stream Line Academy Account</p>
+
+            <form onsubmit="login(); return false;">
+
+                <!-- Username -->
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Username"
+                        required>
+                </div>
+
+                <!-- Password -->
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        required>
+
+                    <i class="fa-solid fa-eye eye"
+                       onclick="showPassword()"></i>
+                </div>
+
+                <div class="forgot">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    Login
+                </button>
+
+                <!-- Error Message -->
+                <p id="error" style="color:red; margin-top:15px;"></p>
+
+            </form>
+
+            <div class="or">
+                <span>OR</span>
+            </div>
+
+            <button type="button" class="register-btn">
+                Create New Account
+            </button>
+            <p>login  successfull</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- JavaScript -->
+<script src="javascript/java.js"></script>
+
+</body>
+</html>

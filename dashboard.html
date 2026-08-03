@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Line Academy Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+
+    <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h2>Stream Line</h2>
+        <span>Academy</span>
+    </div>
+
+    <ul>
+
+        <li class="active">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </li>
+
+        <!-- Students Menu -->
+       <li class="menu">
+
+    <div class="menu-title" onclick="toggleStudents()">
+
+        <span>
+            <i class="fa-solid fa-user-graduate"></i>
+            Students
+        </span>
+
+        <i class="fa-solid fa-chevron-down" id="studentArrow"></i>
+
+    </div>
+
+    <ul class="submenu" id="studentMenu">
+
+        <li onclick="window.location.href='student.php'">
+             Add Student
+        </li>
+
+        <li onclick="window.location.href='view_students.php'">
+            └─ Student Records
+        </li>
+
+    </ul>
+
+</li>
+
+        <li class="menu">
+
+    <div class="menu-title" onclick="toggleTeachers()">
+
+        <span>
+            <i class="fa-solid fa-chalkboard-user"></i>
+            Teachers
+        </span>
+
+        <i class="fa-solid fa-chevron-down" id="teacherArrow"></i>
+
+    </div>
+
+    <ul class="submenu" id="teacherMenu">
+
+        <li onclick="window.location.href='teacher.php'">
+             New Teacher
+        </li>
+        <li onclick="window.location.href='teacher_record.php'">
+             Teacher Record
+        </li>
+
+        <li onclick="window.location.href='teacher_salary.php'">
+             Teacher Salary
+        </li>
+    </ul>
+</li>
+<li class="menu">
+
+    <div class="menu-title" onclick="toggleCourses()">
+
+        <span>
+            <i class="fa-solid fa-book-open"></i>
+            Courses
+        </span>
+
+        <i class="fa-solid fa-chevron-down" id="courseArrow"></i>
+
+    </div>
+
+    <ul class="submenu" id="courseMenu">
+
+        <li onclick="window.location.href='beginner.html'">
+             Beginner Level
+        </li>
+
+        <li onclick="window.location.href='intermediate.php'">
+     Intermediate Level
+</li>
+         <li onclick="window.location.href='advanced.php'">
+    Advanced Level
+</li>
+        <li onclick="window.location.href='course_record.php'">
+            Course Record
+        </li>
+
+    </ul>
+
+</li>
+        
+        
+  <li class="menu">
+
+    <div class="menu-title" onclick="toggleAttendance()">
+
+        <span>
+            <i class="fa-solid fa-calendar-check"></i>
+            Attendance
+        </span>
+
+        <i class="fa-solid fa-chevron-down" id="attendanceArrow"></i>
+
+    </div>
+
+    <ul class="submenu" id="attendanceMenu">
+
+        <li onclick="window.location.href='teacher_attendance.php'">
+            Teacher Attendance
+        </li>
+
+        <li onclick="window.location.href='student_attendance.php'">
+            Student Attendance
+        </li>
+
+    </ul>
+
+</li>
+
+        <li>
+            <i class="fa-solid fa-file-lines"></i>
+            Assignments
+        </li>
+
+        <li>
+            <i class="fa-solid fa-dollar-sign"></i>
+            Fees
+        </li>
+
+        <li>
+            <i class="fa-solid fa-chart-column"></i>
+            Reports
+        </li>
+
+        <li>
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </li>
+
+        <li>
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </li>
+
+    </ul>
+
+    <div class="logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </div>
+
+</div>
+<!-- Main -->
+<div class="main">
+    <!-- Topbar -->
+    <div class="topbar">
+
+        <div class="left">
+            <i class="fa-solid fa-bars"></i>
+            <h1>Dashboard</h1>
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="right">
+            <i class="fa-regular fa-bell"></i>
+            <i class="fa-regular fa-envelope"></i>
+            <img src="images/im2.png" alt="">
+            <span>Welcome Admin</span>
+        </div>
+
+    </div>
+
+    <!-- Welcome -->
+    <div class="welcome">
+
+        <h2>Welcome Back, Admin 👋</h2>
+        <p>Here's what's happening with your academy today.</p>
+
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+
+        <div class="card">
+            <i class="fa-solid fa-user-graduate"></i>
+            <h1>250</h1>
+            <p>Total Students</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <h1>18</h1>
+            <p>Total Teachers</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-book-open"></i>
+            <h1>12</h1>
+            <p>Total Courses</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-calendar-check"></i>
+            <h1>95%</h1>
+            <p>Attendance</p>
+        </div>
+
+    </div>
+
+    <!-- Row -->
+    <div class="row">
+
+    </div>
+
+</div>
+
+<script src="javascript/dashboard.js"></script>
+
+</body>
+</html>
