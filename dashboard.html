@@ -143,27 +143,31 @@
     </ul>
 
 </li>
+   <li class="menu">
 
-        <li>
-            <i class="fa-solid fa-file-lines"></i>
-            Assignments
-        </li>
+    <div class="menu-title" onclick="toggleFee()">
 
-        <li class="menu-item">
-    <div class="menu-title" onclick="toggleMenu('feeMenu')">
-        💰 Fee
-        <span class="arrow"></span>
+        <span>
+            <i class="fa-solid fa-money-bill-wave"></i>
+            Fee
+        </span>
+
+        <i class="fa-solid fa-chevron-down" id="feeArrow"></i>
+
     </div>
 
-    <ul id="feeMenu" class="submenu">
+    <ul class="submenu" id="feeMenu">
+
         <li onclick="window.location.href='fee.php'">
-             Add Fee
+            Add Fee
         </li>
 
         <li onclick="window.location.href='fee_record.php'">
-             Fee Record
+            Fee Record
         </li>
+
     </ul>
+
 </li>
 
         <li>

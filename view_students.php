@@ -64,7 +64,9 @@ $result = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC");
     <th>Joining Date</th>
     <th>Contact</th>
     <th>Photo</th>
+
 </tr>
+
 
 <?php while($row=mysqli_fetch_assoc($result)){ ?>
 
@@ -95,6 +97,11 @@ echo "No Photo";
 </td>
 
 </tr>
+<td>
+     <a href="delete_student.php?id=<?php echo $row['id']; ?>">
+    Delete
+</a>
+</td>
 
 <?php } ?>
 

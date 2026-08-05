@@ -47,6 +47,7 @@ $result = mysqli_query($conn, "SELECT * FROM teachers");
         <th>Department</th>
         <th>Subject</th>
         <th>Status</th>
+         <th>Action</th>
     </tr>
 
     <?php while($row = mysqli_fetch_assoc($result)){ ?>
@@ -60,6 +61,14 @@ $result = mysqli_query($conn, "SELECT * FROM teachers");
         <td><?php echo $row['subject']; ?></td>
         <td><?php echo $row['status']; ?></td>
     </tr>
+
+
+    <td>
+    <a href="delete_teacher.php?id=<?php echo $row['id']; ?>"
+       onclick="return confirm('Are you sure you want to delete this teacher?');">
+       Delete
+    </a>
+</td>
 
     <?php } ?>
 

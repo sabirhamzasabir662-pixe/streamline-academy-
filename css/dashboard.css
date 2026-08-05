@@ -84,8 +84,14 @@ body{
 .main{
     margin-left:260px;
     width:calc(100% - 260px);
-}
+    min-height:100vh;
 
+    background-image:url("../images/im3.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
 /* Topbar */
 
 .topbar{
@@ -158,9 +164,10 @@ body{
 
 .welcome{
     margin:25px;
-    background:linear-gradient(to right,#eef5ff,#dbeafe);
     padding:30px;
     border-radius:15px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(6px);
 }
 
 .welcome h2{
@@ -182,7 +189,7 @@ body{
 }
 
 .card{
-    background:#fff;
+         background:rgba(255,255,255,0.92);
     border-radius:15px;
     padding:25px;
     text-align:center;
@@ -349,31 +356,12 @@ body{
 }
 .submenu{
     display:none;
-    list-style:none;
-    padding-left:20px;
-    margin-top:5px;
 }
 
-.submenu li{
-    padding:10px;
-    cursor:pointer;
-    color:white;
-    transition:.3s;
+.submenu.show{
+    display:block;
 }
-
-.submenu li:hover{
-    background:#1e4ba3;
-    border-radius:5px;
-}
-
-.menu-title{
-    cursor:pointer;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px;
-}
-
-.arrow{
-    font-size:12px;
+.rotate{
+    transform:rotate(180deg);
+    transition:0.3s;
 }

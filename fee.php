@@ -1,99 +1,173 @@
+<?php
+$conn = mysqli_connect("localhost","root","","streamlineacademy");
+
+if(isset($_POST['save_fee']))
+{
+    $student_id = $_POST['student_id'];
+    $student_name = $_POST['student_name'];
+    $course = $_POST['course_name'];
+    $fee_month = $_POST['fee_month'];
+    $amount = $_POST['amount'];
+    $payment_date = $_POST['payment_date'];
+    $status = "Paid";
+    $payment_method = $_POST['payment_method'];
+    $remarks = $_POST['remarks'];
+
+   $sql = "INSERT INTO fees
+(student_id, student_name, course, fee_month, amount, payment_date, status)
+VALUES
+('$student_id', '$student_name', '$course', '$fee_month', '$amount', '$payment_date', '$status')";
+
+    if(mysqli_query($conn,$sql))
+    {
+        echo "<script>
+                alert('Fee Added Successfully!');
+                window.location='fee_record.php';
+              </script>";
+    }
+    else
+    {
+        echo "Error : ".mysqli_error($conn);
+    }
+}
+?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Add Student Fee</title>
+<title>Add Fee</title>
 
 <style>
 
-body{
-    font-family:Arial;
-    background:#f4f6f9;
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,Arial,sans-serif;
+}
+
+body{
+    background:#f4f6f9;
 }
 
 .container{
     width:700px;
     margin:40px auto;
-    background:#fff;
+    background:white;
     padding:30px;
     border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,.2);
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
 
 h2{
     text-align:center;
     color:#0B2D70;
-    margin-bottom:20px;
+    margin-bottom:25px;
+}
+
+.form-group{
+    margin-bottom:15px;
 }
 
 label{
     display:block;
-    margin-top:15px;
     font-weight:bold;
+    margin-bottom:5px;
 }
 
-input,select{
+input,select,textarea{
+
     width:100%;
-    padding:12px;
-    margin-top:5px;
+    padding:10px;
     border:1px solid #ccc;
     border-radius:6px;
-    box-sizing:border-box;
+    outline:none;
+}
+
+textarea{
+    resize:none;
 }
 
 button{
-    margin-top:25px;
+
     width:100%;
-    padding:14px;
+    padding:12px;
     border:none;
     background:#0B2D70;
     color:white;
-    font-size:18px;
+    font-size:17px;
     border-radius:6px;
     cursor:pointer;
 }
 
 button:hover{
-    background:#17439b;
+    background:#1749b3;
 }
 
 </style>
 
 </head>
+
 <body>
 
 <div class="container">
 
-<h2>Student Fee Form</h2>
+<h2>Add Student Fee</h2>
 
 <form method="POST">
 
+<div class="form-group">
 <label>Student ID</label>
 <input type="text" name="student_id" required>
+</div>
 
+<div class="form-group">
 <label>Student Name</label>
 <input type="text" name="student_name" required>
+</div>
 
+<div class="form-group">
 <label>Course</label>
-<input type="text" name="course" required>
+<input type="text" name="course_name" required>
+</div>
 
+<div class="form-group">
 <label>Fee Month</label>
 <input type="month" name="fee_month" required>
+</div>
 
+<div class="form-group">
 <label>Fee Amount</label>
 <input type="number" name="amount" required>
+</div>
 
+<div class="form-group">
 <label>Payment Date</label>
 <input type="date" name="payment_date" required>
+</div>
 
-<label>Status</label>
+<div class="form-group">
+<label>Payment Method</label>
 
-<select name="status">
-<option>Paid</option>
-<option>Unpaid</option>
+<select name="payment_method">
+
+<option>Cash</option>
+<option>Bank</option>
+<option>EasyPaisa</option>
+<option>JazzCash</option>
+
 </select>
+
+</div>
+
+<div class="form-group">
+
+<label>Remarks</label>
+
+<textarea name="remarks"></textarea>
+
+</div>
 
 <button type="submit" name="save_fee">
 Save Fee
@@ -105,26 +179,3 @@ Save Fee
 
 </body>
 </html>
-<?php
-$conn = mysqli_connect("localhost", "root", "", "streamlineacademy");
-
-if(isset($_POST['save_fee']))
-{
-    $student_id = $_POST['student_id'];
-    $student_name = $_POST['student_name'];
-    $course = $_POST['course'];
-    $fee_month = $_POST['fee_month'];
-    $amount = $_POST['amount'];
-    $payment_date = $_POST['payment_date'];
-    $status = $_POST['status'];
-
-    $sql = "INSERT INTO fees
-    (student_id, student_name, course, fee_month, amount, payment_date, status)
-    VALUES
-    ('$student_id','$student_name','$course','$fee_month','$amount','$payment_date','$status')";
-
-    mysqli_query($conn,$sql);
-
-    echo "<script>alert('Fee Added Successfully');</script>";
-}
-?>
