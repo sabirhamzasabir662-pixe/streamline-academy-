@@ -347,3 +347,33 @@ body{
 #attendanceArrow.rotate{
     transform:rotate(180deg);
 }
+.submenu{
+    display:none;
+    list-style:none;
+    padding-left:20px;
+    margin-top:5px;
+}
+
+.submenu li{
+    padding:10px;
+    cursor:pointer;
+    color:white;
+    transition:.3s;
+}
+
+.submenu li:hover{
+    background:#1e4ba3;
+    border-radius:5px;
+}
+
+.menu-title{
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px;
+}
+
+.arrow{
+    font-size:12px;
+}

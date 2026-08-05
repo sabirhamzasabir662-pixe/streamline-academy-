@@ -49,7 +49,7 @@
         </li>
 
         <li onclick="window.location.href='view_students.php'">
-            └─ Student Records
+             Student Records
         </li>
 
     </ul>
@@ -149,10 +149,22 @@
             Assignments
         </li>
 
-        <li>
-            <i class="fa-solid fa-dollar-sign"></i>
-            Fees
+        <li class="menu-item">
+    <div class="menu-title" onclick="toggleMenu('feeMenu')">
+        💰 Fee
+        <span class="arrow"></span>
+    </div>
+
+    <ul id="feeMenu" class="submenu">
+        <li onclick="window.location.href='fee.php'">
+             Add Fee
         </li>
+
+        <li onclick="window.location.href='fee_record.php'">
+             Fee Record
+        </li>
+    </ul>
+</li>
 
         <li>
             <i class="fa-solid fa-chart-column"></i>
